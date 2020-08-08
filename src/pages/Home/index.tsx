@@ -13,6 +13,7 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  KeyboardAvoidingView,
 } from 'react-native'
 
 const Home = () => {
@@ -23,13 +24,18 @@ const Home = () => {
           <View style={styles.starIcon}>
             <FontAwesome5 name="star" size={20} color="white" />
           </View>
+
           <View style={styles.search}>
-            <EvilIcons name="search" size={24} color="white" />
-            <TextInput
-              placeholder="O QUE PROCURA?"
-              style={styles.searchInput}
-            />
+            <KeyboardAvoidingView style={{ flexDirection: 'row' }}>
+              <EvilIcons name="search" size={24} color="white" />
+              <TextInput
+                placeholder="O QUE PROCURA?"
+                placeholderTextColor="#fff"
+                style={styles.searchInput}
+              />
+            </KeyboardAvoidingView>
           </View>
+
         </View>
 
         <View style={styles.accountInfo}>
@@ -107,7 +113,7 @@ const styles = StyleSheet.create({
   header: {
     height: 280,
     backgroundColor: '#00a3e0',
-    padding: 32,
+    padding: 40,
     alignItems: 'center',
   },
 
