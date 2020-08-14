@@ -9,16 +9,68 @@ import {
   View,
   Text,
   TextInput,
-  TouchableOpacity,
   ScrollView,
   KeyboardAvoidingView,
 } from 'react-native'
+
+import PageCardItem from '../../components/PageCardItem'
 
 import styles from './styles'
 
 const Home = () => {
   const [isVisibleTotalBalance, setIsVisibleTotalBalance] = useState(false)
   const [totalBalance, setTotalBalance] = useState<number>(39.00)
+
+  const operationItems = [
+    {
+      title: 'CARREGAR E-KWANZA',
+      icon: (
+        <MaterialCommunityIcons
+          name="content-duplicate"
+          size={28}
+          color="#00a3e0"
+        />
+      )
+    },
+    {
+      title: 'CONSULTAR PATRIMÓNIO',
+      icon: (
+        <MaterialCommunityIcons
+          name="file-document"
+          size={28}
+          color="#00a3e0"
+        />
+      )
+    },
+    {
+      title: 'PAGAR SERVIÇOS',
+      icon: (
+        <MaterialIcons
+          name="account-balance-wallet"
+          size={28}
+          color="#00a3e0"
+        />
+      )
+    },
+    {
+      title: 'LEVANTAR DINHEIRO',
+      icon: (
+        <FontAwesome5 name="money-check-alt" size={28} color="#00a3e0" />
+      )
+    },
+    {
+      title: 'CÂMBIOS TAXAS DE CÂ...',
+      icon: (
+        <MaterialCommunityIcons name="coin" size={28} color="#00a3e0" />
+      )
+    },
+    {
+      title: 'CONSULTAR CARTŌES',
+      icon: (
+        <FontAwesome5 name="credit-card" size={28} color="#00a3e0" />
+      )
+    }
+  ]
 
   return (
     <>
@@ -69,47 +121,7 @@ const Home = () => {
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{ paddingHorizontal: 20 }}
           >
-            <TouchableOpacity style={styles.item} activeOpacity={0.6}>
-              <MaterialCommunityIcons
-                name="content-duplicate"
-                size={28}
-                color="#00a3e0"
-              />
-              <Text style={styles.itemTitle}>CARREGAR E-KWANZA</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.item} activeOpacity={0.6}>
-              <MaterialCommunityIcons
-                name="file-document"
-                size={28}
-                color="#00a3e0"
-              />
-              <Text style={styles.itemTitle}>CONSULTAR PATRIMÓNIO</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.item} activeOpacity={0.6}>
-              <MaterialIcons
-                name="account-balance-wallet"
-                size={28}
-                color="#00a3e0"
-              />
-              <Text style={styles.itemTitle}>PAGAR SERVIÇOS</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.item} activeOpacity={0.6}>
-              <FontAwesome5 name="money-check-alt" size={28} color="#00a3e0" />
-              <Text style={styles.itemTitle}>LEVANTAR DINHEIRO</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.item} activeOpacity={0.6}>
-              <MaterialCommunityIcons name="coin" size={28} color="#00a3e0" />
-              <Text style={styles.itemTitle}>CÂMBIOS TAXAS DE CÂ...</Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.item} activeOpacity={0.6}>
-              <FontAwesome5 name="credit-card" size={28} color="#00a3e0" />
-              <Text style={styles.itemTitle}>CONSULTAR CARTŌES</Text>
-            </TouchableOpacity>
+            {operationItems.map((item, index) => <PageCardItem key={index} item={item} />)}
           </ScrollView>
         </View>
 
