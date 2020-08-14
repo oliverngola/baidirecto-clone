@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Feather as Icon,
   FontAwesome5,
-  EvilIcons,
   MaterialIcons,
   MaterialCommunityIcons,
 } from '@expo/vector-icons'
@@ -18,17 +17,20 @@ import {
 import styles from './styles'
 
 const Home = () => {
+  const [isVisibleTotalBalance, setIsVisibleTotalBalance] = useState(false)
+  const [totalBalance, setTotalBalance] = useState<number>(39.00)
+
   return (
     <>
       <View style={styles.header}>
         <View style={styles.container}>
           <View style={styles.starIcon}>
-            <FontAwesome5 name="star" size={20} color="white" />
+            <Icon name="star" size={22} color="white" />
           </View>
 
           <View style={styles.search}>
             <KeyboardAvoidingView style={{ flexDirection: 'row' }}>
-              <EvilIcons name="search" size={24} color="white" />
+              <Icon name="search" style={styles.searchIcon} size={22} color="white" />
               <TextInput
                 placeholder="O QUE PROCURA?"
                 placeholderTextColor="#fff"
@@ -42,8 +44,20 @@ const Home = () => {
         <View style={styles.accountInfo}>
           <View style={styles.accountInfoPicture}></View>
           <View style={[styles.container, styles.accountInfoBoth]}>
-            <Icon name="eye" size={24} color="white" />
-            <Text style={styles.accountInfoText}>VER SALDO</Text>
+            {isVisibleTotalBalance ?
+              (
+                <>
+                  <Icon name="eye" onPress={() => setIsVisibleTotalBalance(!isVisibleTotalBalance)} size={24} color="white" />
+                  <Text style={styles.accountInfoText}>VER SALDO</Text>
+                </>
+              ) :
+              (
+                <>
+                  <Icon name="eye-off" onPress={() => setIsVisibleTotalBalance(!isVisibleTotalBalance)} size={24} color="white" />
+                  <Text style={styles.accountInfoText}>{totalBalance},00 KZ</Text>
+                </>
+              )
+            }
           </View>
         </View>
       </View>

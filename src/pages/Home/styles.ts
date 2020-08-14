@@ -25,19 +25,24 @@ const styles = StyleSheet.create({
     padding: 7,
   },
 
+  searchIcon: {
+    marginRight: 10
+  },
+
   searchInput: {
     color: 'white',
-    marginLeft: 10,
+    textAlign: 'justify',
     fontFamily: 'Roboto_400Regular',
+    fontSize: 16,
   },
 
   accountInfo: {
-    marginTop: 42,
+    marginTop: 32,
   },
 
   accountInfoPicture: {
-    width: 80,
-    height: 80,
+    width: 90,
+    height: 90,
     borderRadius: 100,
     backgroundColor: 'rgba(0,50,90,.12)',
     alignSelf: 'center',
@@ -49,7 +54,7 @@ const styles = StyleSheet.create({
 
   accountInfoText: {
     color: '#fff',
-    fontSize: 13,
+    fontSize: 15,
     fontFamily: 'Roboto_400Regular',
     marginLeft: 5,
   },
@@ -61,11 +66,11 @@ const styles = StyleSheet.create({
   },
 
   operation: {
-    marginTop: -50,
+    marginTop: -44,
   },
 
   item: {
-    width: 130,
+    width: 140,
     height: 100,
     backgroundColor: '#fff',
     borderColor: '#eee',
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
 
   itemTitle: {
     fontFamily: 'Roboto_400Regular',
-    fontSize: 13,
+    fontSize: 14,
     color: '#5c7c96',
     marginTop: 6,
   },
