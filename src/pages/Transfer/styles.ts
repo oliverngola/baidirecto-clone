@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
 
   headerTitle: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 18,
     fontFamily: 'Ubuntu_700Bold',
   },
 
   headerSub: {
     color: '#fff',
-    fontSize: 11,
+    fontSize: 13,
     fontFamily: 'Roboto_400Regular',
   },
 
@@ -61,13 +61,13 @@ const styles = StyleSheet.create({
 
   itemDetailTitle: {
     fontFamily: 'Ubuntu_700Bold',
-    fontSize: 14,
+    fontSize: 16,
     color: '#00a3e0',
   },
 
   itemDetailDesc: {
     fontFamily: 'Roboto_400Regular',
-    fontSize: 13,
+    fontSize: 14,
     color: '#5c7c96',
   },
 })
