@@ -1,10 +1,10 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View } from 'react-native'
+
+import styles from './styles'
 
 const Settings = () => {
   return <View />
 }
-
-const styles = StyleSheet.create({})
 
 export default Settings
