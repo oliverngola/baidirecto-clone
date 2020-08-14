@@ -25,7 +25,7 @@ const Transfer = () => {
       description: 'Transfira dinheiro para contas de outros bancos.',
       icon: (
         <MaterialCommunityIcons
-          name="home-import-outline"
+          name="cards-playing-outline"
           size={58}
           color="#00a3e0"
         />
